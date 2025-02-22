@@ -37,10 +37,51 @@ phishing_classifier = load_model("lr_classifier_phishing.pkl")
 
 class SpamDetector:
     def __init__(self):
-        self.spam_keywords = [
-            "sms", "reply", "end", "sptv", "txt", "stop", "cancel", 
-            "unsubscribe", "limited time", "offer", "urgent"
-        ]
+                self.spam_keywords = [
+                    "sms", "reply", "end", "sptv", "txt", "stop", "cancel", 
+                    "unsubscribe", "limited time", "offer", "urgent", 
+                    "Urgent", "Immediate action required", "Act now", "Failure to act", 
+                    "Limited-time offer", "Hurry", "Expiring soon", "Urgent alert", 
+                    "Risk-free", "Immediate refund", "Unclaimed funds", "Last chance", 
+                    "Final notice", "Your account is locked", "Verify now", 
+                    "Prevent suspension", "Unauthorized activity", 
+                
+                    # Money & Financial Scams
+                    "Winner", "You have won", "Cash prize", "Lottery", "$1000", 
+                    "Free money", "Get rich quick", "Double your money", 
+                    "Investment opportunity", "Cryptocurrency", "High returns", 
+                    "No credit check", "Tax refund", "Pre-approved loan", "Make money fast", 
+                
+                    # Fake Tech & Security Alerts
+                    "Your account has been compromised", "Unusual login attempt", 
+                    "Security warning", "Virus detected", "Your computer is infected", 
+                    "Contact support immediately", "Call now", "Microsoft Security Team", 
+                    "PayPal alert", "Banking issue", "Suspicious activity", "Payment failure", 
+                
+                    # Job & Work-from-Home Scams
+                    "Work from home", "Earn $5000 per month", "No experience needed", 
+                    "Guaranteed income", "Flexible working hours", "Remote job", 
+                    "Passive income", "Exclusive job offer", "Data entry job", "Recruitment team", 
+                
+                    # Fake Promotions & Giveaways
+                    "Free gift", "Claim your prize", "Special offer", "You have been selected", 
+                    "Buy one get one free", "Free trial", "Complimentary", "No hidden fees", 
+                    "Exclusive deal", "VIP access", 
+                
+                    # Fake Subscription & Payment Scams
+                    "Your subscription is expiring", "Update your payment details", 
+                    "Payment failure", "Your service has been suspended", "Renew now", 
+                    "Credit card required", "Billing issue", 
+                
+                    # Loan & Financial Assistance Scams
+                    "Pre-approved loan", "No collateral required", "0% interest", 
+                    "Personal loan offer", "Instant approval", "Government grant", 
+                
+                    # Common Phishing Words & Phrases
+                    "Click here", "Verify your identity", "Login required", "Confirm your account", 
+                    "Secure your information", "Your account will be locked", "Reset your password"
+                ]
+
         self.spam_threshold = 2  
     
     def ml_spam_detection(self, text):
