@@ -56,7 +56,7 @@ class SpamDetector:
                     "Your account has been compromised", "Unusual login attempt", 
                     "Security warning", "Virus detected", "Your computer is infected", 
                     "Contact support immediately", "Call now", "Microsoft Security Team", 
-                    "PayPal alert", "Banking issue", "Suspicious activity", "Payment failure", 
+                    "PayPal alert", "Banking issue", "Suspicious","Suspicious activity", "Payment failure", 
                 
                     # Job & Work-from-Home Scams
                     "Work from home", "Earn $5000 per month", "No experience needed", 
