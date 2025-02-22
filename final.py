@@ -82,7 +82,7 @@ class SpamDetector:
                     "Secure your information", "Your account will be locked", "Reset your password"
                 ]
 
-        self.spam_threshold = 2  
+                self.spam_threshold = 2  
     
     def ml_spam_detection(self, text):
         if spam_tfidf_vectorizer and spam_classifier:
